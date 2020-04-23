@@ -1,53 +1,53 @@
 #pragma once
 #include <string>
+#include<iostream>
 #include "degree.h"
 using std::string;
 
-class student
+class Student
 
 {
-public:
-	
-	const static int daysInCourse = 3;
 
 	//D1. create variables
 private:
-	string studentId;
+	string studentID;
 	string firstName;
 	string lastName;
 	string Email;
-	int Age;
-	int* days;
-	degreeProgram dProgram;
-
+	string age;
+	double* days;
+	DegreeType dtype;
 
 public:
-	student(); // empty constructor
+
+	const static int daysArray = 3;
+	Student(); // empty constructor
+
+	Student(string ID, string firstName, string lastName, string email, int Age, double days[], DegreeType type);
 	
 	//full constractor
-	student(string ID, string firstName, string lastName, string email, int Age, int days[], degreeProgram type);
+	Student(string ID, string firstName, string lastName, string email, string age, double days[], DegreeType type);
 
 	//create function getter
-	string getStudentId();
+	string getID();
 	string getFirstname();
 	string getLastname();
 	string getEmail();
-	int getAge();
-	int* getDays();
-	virtual degreeProgram getdegreeProgram() = 0;
+	string getAge();
+	double* getDays();
+	DegreeType getDegreeType();
 
 	//create setter
-	void setStudentId(string StudentID);
+	void setID(string StudentID);
 	void setFirstname(string firstname);
 	void setLastname(string lastname);
 	void setEmail(string email);
-	void setAge();
-	void setDays(int days[]);
-	void setdegreeProgram(degreeProgram d);
+	void setAge(string age);
+	void setDays(double days[]);
+	void setDegreeType(DegreeType d);
 	void print();
 
 	// destructor
-	~student();
-
+	~Student();
 
 };
