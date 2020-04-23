@@ -14,9 +14,9 @@ Roster::Roster()
 }
 
 
-Roster::Roster(int capcity)
+Roster::Roster(int capacity)
 {
-    this->capacity = 0;
+    this->capacity = capacity;
     this->lastIndex = -1;
     this->classRosterArray = new Student * [capacity];
 }
@@ -32,27 +32,27 @@ void Roster::parseAdd(string row)
         if (row[0] == 'A1') {
 
             this->classRosterArray[lastIndex] = new Student();
-            classRosterArray[lastIndex]->setDegreeType(SECURITY);
+            classRosterArray[lastIndex]->setDegreeProgram(SECURITY);
         }
         else if (row[1] == 'A2') {
             this->classRosterArray[lastIndex] = new Student();
-            classRosterArray[lastIndex]->setDegreeType(NETWORK);
+            classRosterArray[lastIndex]->setDegreeProgram(NETWORK);
         }
         else if (row[2] == 'A3') {
             this->classRosterArray[lastIndex] = new Student();
-            classRosterArray[lastIndex]->setDegreeType(SOFTWARE);
+            classRosterArray[lastIndex]->setDegreeProgram(SOFTWARE);
         }
         else if (row[3] == 'A4') {
             this->classRosterArray[lastIndex] = new Student();
-            classRosterArray[lastIndex]->setDegreeType(SECURITY);
+            classRosterArray[lastIndex]->setDegreeProgram(SECURITY);
 
         }
         else if (row[4] == 'A5') {
             this->classRosterArray[lastIndex] = new Student();
-            classRosterArray[lastIndex]->setDegreeType(SOFTWARE);
+            classRosterArray[lastIndex]->setDegreeProgram(SOFTWARE);
         }
         else {
-            cerr << "INVAILD DEGREE TYPE! EXITING NOW! \n";
+            cerr << "invaild degree type! exiting now! \n";
             exit(-1);
         }
 
@@ -100,7 +100,7 @@ void Roster::parseAdd(string row)
     else{
         cerr << "Error! List has exceeded maximum capacity! \n exiting now!";
         exit(-1);
-
+      
     }
 
 
@@ -149,7 +149,7 @@ void Roster::printAverageDays(string studentID)
 
 void Roster::printInvailidDaysEntires()
 {
-    cout << "Displaying invaild price entries:\n";
+    cout << "Displaying invaild days entries:\n";
     for (int i = 0; i <= lastIndex; i++)
     {
         cout << "Student ID: " << classRosterArray[i]->getID() << ":";
@@ -169,11 +169,11 @@ void Roster::printInvailidDaysEntires()
 }
 
 
-void Roster::printByDegreeType(DegreeType d)
+void Roster::printByDegreeProgram(DegreeProgram d)
     {
-        cout << "Printing degree of type" << degreeTypeString[d] << '\n';
+        cout << "Printing degree of type" << degreeProgramString[d] << '\n';
         for (int i = 0; i <= lastIndex; i++) {
-            if (this->classRosterArray[i]->getDegreeType() == d) this->classRosterArray[i]->print();
+            if (this->classRosterArray[i]->getDegreeProgram() == d) this->classRosterArray[i]->print();
             
             }
 

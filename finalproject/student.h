@@ -16,17 +16,17 @@ private:
 	string Email;
 	string age;
 	double* days;
-	DegreeType dtype;
+	DegreeProgram dtype;
 
 public:
 
 	const static int daysArray = 3;
 	Student(); // empty constructor
 
-	Student(string ID, string firstName, string lastName, string email, int Age, double days[], DegreeType type);
+	Student(string ID, string firstName, string lastName, string email, int Age, double days[], DegreeProgram type);
 	
 	//full constractor
-	Student(string ID, string firstName, string lastName, string email, string age, double days[], DegreeType type);
+	Student(string ID, string firstName, string lastName, string email, string age, double days[], DegreeProgram type);
 
 	//create function getter
 	string getID();
@@ -35,7 +35,7 @@ public:
 	string getEmail();
 	string getAge();
 	double* getDays();
-	DegreeType getDegreeType();
+	DegreeProgram getDegreeProgram();
 
 	//create setter
 	void setID(string StudentID);
@@ -44,7 +44,7 @@ public:
 	void setEmail(string email);
 	void setAge(string age);
 	void setDays(double days[]);
-	void setDegreeType(DegreeType d);
+	void setDegreeProgram(DegreeProgram d);
 	void print();
 
 	// destructor

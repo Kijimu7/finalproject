@@ -1,6 +1,7 @@
 #include <iostream>
 #include<iomanip>
 #include"student.h"
+#include "degree.h"
 using std::string;
 using std::cout;
 using std::left;
@@ -20,11 +21,11 @@ Student::Student() //Empty constructor
 	this->age = "";
 	this->days = new double[daysArray];
 	for (int i = 0; i < daysArray; i++) this->days[i] = 0;
-	this->dtype = DegreeType::UNDECIDED;
+	this->dtype = DegreeProgram::UNDECIDED;
 }
 
 //full constructor
-Student::Student(string ID, string firstName, string lastName, string email, int Age, double days[], DegreeType type)
+Student::Student(string ID, string firstName, string lastName, string email, int Age, double days[], DegreeProgram type)
 {
 	this->studentID = ID;
 	this->firstName = firstName;
@@ -36,9 +37,6 @@ Student::Student(string ID, string firstName, string lastName, string email, int
 	this->dtype = type;
 }
 
-Student::Student(string ID, string firstName, string lastName, string email, string age, double days[], DegreeType type)
-{
-}
 
 //getters
 string Student::getID()
@@ -69,7 +67,7 @@ double* Student::getDays()
 	return days;
 }
 
-DegreeType Student::getDegreeType()
+DegreeProgram Student::getDegreeProgram()
 {
 	return dtype;
 }
@@ -106,7 +104,7 @@ void Student::setDays(double days[])
 	for (int i = 0; i < 3; i++) this->days[i] = days[i];
 	
 }
-void Student::setDegreeType(DegreeType d)
+void Student::setDegreeProgram(DegreeProgram d)
 {
 	this->dtype = d;
 }
@@ -121,7 +119,7 @@ void Student::print()
 	cout << left << setw(10) << days[0];
 	cout << left << setw(10) << days[1];
 	cout << left << setw(10) << days[2];
-	cout << left << setw(10) << degreeTypeString[getDegreeType()];
+	cout << left << setw(10) << degreeProgramString[getDegreeProgram()];
 	
 }
 

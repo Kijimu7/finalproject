@@ -18,10 +18,10 @@
     <ClCompile Include="student.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="roaster.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="roster.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

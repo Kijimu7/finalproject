@@ -13,19 +13,25 @@ using namespace std;
 
 int main()
 {
-	
+
+	cout << "SCRIPTING AND PROGRAMMING APPLICATION C867\n";
+	cout << "C++\n";
 
 	Roster* rep = new Roster(numStudents);
-	cout << "Parsing data and adding students: \t";
+	cout << "Parsing data and adding students:\t";
 	for (int i= 0; i < numStudents; i++)
 	{
 		rep->parseAdd(studentData[i]);
 	}
 	cout << "DONE.\n";
-	cout << "Displaying all books:\n";
+	cout << "Displaying all students:\n";
 
 
 	rep->print_All();
+
+	cout << "Removing A1:\n";
+	if (rep->remove("A1")) rep->print_All();
+	else cout << "Book not found!\n";
 
 	cout << "Removing A1:\n";
 	if (rep->remove("A1")) rep->print_All();
@@ -35,9 +41,9 @@ int main()
 
 	rep->printInvailidDaysEntires();
 
-	rep->printByDegreeType(SECURITY);
-	rep->printByDegreeType(NETWORK);
-	rep->printByDegreeType(SOFTWARE);
+	rep->printByDegreeProgram(SECURITY);
+	rep->printByDegreeProgram(NETWORK);
+	rep->printByDegreeProgram(SOFTWARE);
 
 		system("pause");
 	return 0;
