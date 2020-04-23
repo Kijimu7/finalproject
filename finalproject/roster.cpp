@@ -132,7 +132,7 @@ bool Roster::remove(string ID)
 
 }
 
-void Roster::printAverageDays(string studentID)
+void Roster::printAverageDaysInCourse(string studentID)
 {
     bool found = false;
     for (int i = 0; i <= lastIndex; i++)

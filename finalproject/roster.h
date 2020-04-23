@@ -28,7 +28,7 @@ public:
 	void parseAdd(string row);
 	void print_All();
 	bool remove(string studentID);
-	void printAverageDays(string studentID);
+	void printAverageDaysInCourse(string studentID);
 	void printByDegreeProgram(DegreeProgram d);
 	void printInvailidDaysEntires();
 	

@@ -37,7 +37,7 @@ int main()
 	if (rep->remove("A1")) rep->print_All();
 	else cout << "Book not found!\n";
 
-	rep->printAverageDays("A3");
+	rep->printAverageDaysInCourse("A3");
 
 	rep->printInvailidDaysEntires();
 
