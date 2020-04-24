@@ -29,25 +29,25 @@ void Roster::parseAdd(string row)
         lastIndex++;
         double darray[Student::daysArray];
 
-        if (row[0] == 'A1') {
+        if (row[0] == 'A') {
 
             this->classRosterArray[lastIndex] = new Student();
             classRosterArray[lastIndex]->setDegreeProgram(SECURITY);
         }
-        else if (row[1] == 'A2') {
+        else if (row[0] == 'A') {
             this->classRosterArray[lastIndex] = new Student();
             classRosterArray[lastIndex]->setDegreeProgram(NETWORK);
         }
-        else if (row[2] == 'A3') {
+        else if (row[0] == 'A') {
             this->classRosterArray[lastIndex] = new Student();
             classRosterArray[lastIndex]->setDegreeProgram(SOFTWARE);
         }
-        else if (row[3] == 'A4') {
+        else if (row[0] == 'A') {
             this->classRosterArray[lastIndex] = new Student();
             classRosterArray[lastIndex]->setDegreeProgram(SECURITY);
 
         }
-        else if (row[4] == 'A5') {
+        else if (row[0] == 'A') {
             this->classRosterArray[lastIndex] = new Student();
             classRosterArray[lastIndex]->setDegreeProgram(SOFTWARE);
         }
@@ -102,6 +102,23 @@ void Roster::parseAdd(string row)
         exit(-1);
       
     }
+
+
+}
+
+
+void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age,
+    int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeprogram)
+{
+    double daysOfArray[Student::daysArray];
+    daysOfArray[0] = daysInCourse1;
+    daysOfArray[1] = daysInCourse2;
+    daysOfArray[2] = daysInCourse3;
+
+    if (degreeprogram == SECURITY) classRosterArray[lastIndex] = new Student(studentID, firstName, lastName, emailAddress, age, daysOfArray, degreeprogram);
+    else if (degreeprogram == NETWORK) classRosterArray[lastIndex] = new Student(studentID, firstName, lastName, emailAddress, age, daysOfArray, degreeprogram);
+    else classRosterArray[lastIndex] = new Student(studentID, firstName, lastName, emailAddress, age, daysOfArray, degreeprogram);
+
 
 
 }
@@ -169,7 +186,7 @@ void Roster::printInvailidDaysEntires()
 }
 
 
-void Roster::printByDegreeProgram(DegreeProgram d)
+void Roster::printByDegreeProgram( DegreeProgram d)
     {
         cout << "Printing degree of type" << degreeProgramString[d] << '\n';
         for (int i = 0; i <= lastIndex; i++) {

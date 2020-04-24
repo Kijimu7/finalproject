@@ -30,8 +30,8 @@ Student::Student(string ID, string firstName, string lastName, string email, int
 	this->studentID = ID;
 	this->firstName = firstName;
 	this->lastName = lastName;
-	this->Email = Email;
-	this->age = age;
+	this->Email = email;
+	this->age = Age;
 	this->days = new double[daysArray];
 	for (int i = 0; i < 3; i++) this->days[i] = days[i];
 	this->dtype = type;
@@ -111,7 +111,7 @@ void Student::setDegreeProgram(DegreeProgram d)
 
 void Student::print()
 {
-	cout << left << setw(5) << studentID;
+	cout << left << setw(10) << studentID;
 	cout << left << setw(10) << firstName;
 	cout << left << setw(10) << lastName;
 	cout << left << setw(30) << Email;

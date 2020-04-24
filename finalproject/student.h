@@ -9,6 +9,9 @@ class Student
 {
 
 	//D1. create variables
+
+
+
 private:
 	string studentID;
 	string firstName;
